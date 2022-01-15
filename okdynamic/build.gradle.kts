@@ -1,9 +1,33 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
+    id("maven-publish")
 }
 
 version = "0.1.0"
+group = "com.github.jimlyas"
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("OkDynamic") {
+                from(components["debug"])
+                groupId = project.group.toString()
+                artifactId = project.name
+                version = project.version.toString()
+            }
+        }
+        repositories {
+            maven {
+                setUrl("https://maven.pkg.github.com/jimlyas/okdynamic")
+                credentials {
+                    username = properties["username_github"].toString()
+                    password = properties["key_github"].toString()
+                }
+            }
+        }
+    }
+}
 
 android {
     compileSdk = 31
