@@ -1,24 +1,31 @@
 package dev.garnishcode.okdynamic
 
 import okhttp3.Interceptor
-import okhttp3.Response
 
 /**
  * @author Jimly A.
  * @since 14-Jan-22
  **/
 class OkDynamic : Interceptor {
-    private lateinit var environments: Array<out Pair<Environment.Type, String>>
+    private lateinit var environments: Array<out Pair<Environment, String>>
 
-    @Environment.Type
-    private var state: Int = Environment.DEVELOP
+    private var environment: Environment = Environment.DEVELOPMENT
 
-    override fun intercept(chain: Interceptor.Chain): Response {
-        return chain.proceed(chain.request())
+    override fun intercept(chain: Interceptor.Chain) =
+        chain.proceed(
+            chain.request().newBuilder().url(
+                chain.request().url.newBuilder().host(
+                    environments.first { it.first == environment }.second
+                ).build()
+            ).build()
+        )
+
+    fun setEnvironment(environment: Environment) {
+        this.environment = environment
     }
 
     companion object {
-        fun get(vararg urls: Pair<Environment.Type, String>) =
+        fun get(vararg urls: Pair<Environment, String>) =
             OkDynamic().apply {
                 environments = urls
             }

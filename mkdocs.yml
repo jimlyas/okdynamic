@@ -1,0 +1,88 @@
+# Project information
+site_name: OkDynamic
+site_url: https://jimlyas.github.io/okdynamic/
+site_author: jimlyas
+site_description: >-
+  Okhttp interceptor to help you dynamically change your Back-End's environment
+
+theme:
+  name: material
+  languange: en
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - media: "(prefers-color-scheme: light)"
+        scheme: default
+        toggle:
+          icon: matmaterial/weather-sunny
+          name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+        scheme: slate
+        toggle:
+          icon: material/weather-night
+          name: Switch to light mode
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.instant
+    - navigation.indexes
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - search.share
+
+plugins:
+  - search
+  - macros
+  - minify:
+      minify_html: true
+      minify_js: true
+
+# Repository
+repo_url: https://github.com/jimlyas/okdynamic
+repo_name: View on Github!
+copyright: © 2021 Jimly A.
+
+# Navigation
+nav:
+  - Home: index.md
+  - Security: security.md
+
+markdown_extensions:
+  - abbr
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes
+  - def_list
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - attr_list
+  - admonition
+  - meta
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - toc:
+      toc_depth: 2
+      title: On this page
+      permalink: true
+      permalink_title: Anchor link to this section for reference
+      slugify: !!python/name:pymdownx.slugs.uslugify
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/medium
+      link: https://jimlyas.medium.com
+    - icon: fontawesome/brands/github
+      link: https://github.com/jimlyas
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/jimlyas
