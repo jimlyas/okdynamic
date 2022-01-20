@@ -1,0 +1,22 @@
+name: Pull Request
+description: Requesting for a Pull
+body:
+  - type: checkboxes
+    attributes:
+      label: Contribution guidelines
+      description: Please read the contribution guidelines before proceeding.
+      options:
+        - label: I've read the [contribution guidelines](https://github.com/jimlyas/okdynamic/blob/master/CONTRIBUTING.md) and wholeheartedly agree
+          required: true
+  - type: textarea
+    attributes:
+      label: Description
+      description: Please provide a brief description about your Pull Request
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to produce
+      description: Please describe how to test your Pull Request
+    validations:
+      required: true
