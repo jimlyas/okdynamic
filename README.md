@@ -1,12 +1,6 @@
 # OkDynamic
 
-`okhttp` interceptor to dynamically change your Back-End's environment
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jimlyas/okdynamic?sort=semver)
+![GitHub repo size](https://img.shields.io/github/repo-size/jimlyas/okdynamic)
 
-# Download
-
-*Coming Soon*
-
-# Implementation
-
-*Coming Soon*
-
+lgihtweight `okhttp` interceptor to dynamically change your Back-End's environment.
