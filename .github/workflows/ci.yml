@@ -4,24 +4,14 @@ on:
     branches:
       - main
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: '0'
-      - name: Bump version and push tag
-        uses: anothrNick/github-tag-action@1.36.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.key_github }}
   deployment:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Set up JDK 17
+      - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
-          java-version: 17
+          java-version: 11
           distribution: 'adopt'
           cache: gradle
       - name: Execute Gradle build
