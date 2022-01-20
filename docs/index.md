@@ -3,7 +3,7 @@
 OkDynamic is a lightweight `Okhttp` interceptor that helps you to navigate through your
 environments. Commonly Android developers use `build variant` or `build flavor` like this:
 
-```kotlin
+```kotlin title="build.gradle"
 productFlavors {
     create("development") {
         // Configuration for development environment
@@ -17,5 +17,7 @@ productFlavors {
 }
 ```
 
-This means you need to build separate APKs for each environments if you want to test it. But by
-using this library, you don't need have to do that anymore.
+This means you will need separate APKs if you want to test each environments.
+
+But by using this library, you can dynamically change the environment on run-time without building
+separate APKs.
