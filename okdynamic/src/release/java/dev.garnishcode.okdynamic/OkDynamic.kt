@@ -9,7 +9,7 @@ import okhttp3.Interceptor
 class OkDynamic : Interceptor {
     private lateinit var environments: Array<out Pair<Environment, String>>
 
-    private var environment: Environment = Environment.DEBUG
+    private var environment: Environment = Environment.DEVELOPMENT
 
     override fun intercept(chain: Interceptor.Chain) = chain.proceed(chain.request())
 
