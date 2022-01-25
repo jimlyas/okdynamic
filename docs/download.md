@@ -28,6 +28,7 @@ allProjects {
 
 ## Adding Dependencies
 
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jimlyas/okdynamic?sort=semver)
 In your app's `build.gradle`, add this dependencies:
 
 ```groovy title="build.gradle"
@@ -36,5 +37,4 @@ dependencies {
 }
 ```
 
-By changing the VERSION to the latest version of the library
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jimlyas/okdynamic?sort=semver)
+By changing the VERSION to the latest version of the library.

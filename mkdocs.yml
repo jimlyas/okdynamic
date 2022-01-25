@@ -54,6 +54,7 @@ copyright: © 2021 Jimly A.
 nav:
   - Home: index.md
   - Download: download.md
+  - Implementation: implementation.md
   - Security: security.md
 
 markdown_extensions:
