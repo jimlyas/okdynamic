@@ -34,3 +34,19 @@ single {
         }.build()
 }
 ```
+
+## Changing Environment
+
+When you're ready to change your environment, just inject the `OkDynamic` class where you need it and call the `setEnvironment` method like this:
+
+```kotlin title="SplashScreenActivity.kt"
+
+private val okDynamic by inject<OkDynamic>(named("okdynamic")) // (1)
+
+okDynamic.setEnvironment(Environment.PRODUCTION) // (2)
+```
+
+1.  Inject the `OkDynamic` class based on your Koin configuration
+2.  Call the `setEnvironment` method to change your environment
+
+After calling the method, the next API call will use the environment defined.

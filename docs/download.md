@@ -4,7 +4,8 @@ Before downloading this library, you need to configure personal access token in 
 
 Click [here](https://github.com/settings/tokens) for configuring it!
 
-!!! info Store your token for later!
+!!! info 
+    Store your token for later!
 
 ## Defining Credential
 
