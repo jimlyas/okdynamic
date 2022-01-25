@@ -1,9 +1,19 @@
 ## Getting Personal Access Token
 
-Before downloading this library, you need to configure personal access token in Github,
-click [here](https://github.com/settings/tokens).
+Before downloading this library, you need to configure personal access token in Github.
 
-Store your token for later.
+Click [here](https://github.com/settings/tokens) for configuring it!
+
+!!! info Store your token for later!
+
+## Defining Credential
+
+After generating your personal access token, store it inside `gradle.properties` like this:
+
+```groovy
+gpr_user=yourgithubusername
+gpr_key=yourgeneratedpersonalaccesstoken
+```
 
 ## Defining Repository
 
@@ -15,8 +25,8 @@ allProjects {
         maven {
             url = uri("https://maven.pkg.github.com/jimlyas/okdynamic")
             credentials {
-                username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME") // (1)
-                password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN") // (2)
+                username = properties["gpr_user"].toString() // (1)
+                password = properties["gpr_key"].toString() // (2)
             }
         }
     }
@@ -28,7 +38,6 @@ allProjects {
 
 ## Adding Dependencies
 
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jimlyas/okdynamic?sort=semver)
 In your app's `build.gradle`, add this dependencies:
 
 ```groovy title="build.gradle"
@@ -37,4 +46,6 @@ dependencies {
 }
 ```
 
-By changing the VERSION to the latest version of the library.
+Change **VERSION** to the version of the library you want to use.
+
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/jimlyas/okdynamic?sort=semver)
